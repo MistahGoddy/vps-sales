@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistah Goddy Server | Premium Cloud Hosting</title>
+    <style>
+        /* Modern Cyber Aesthetic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Premium Brand Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: #3b82f6;
+        }
+
+        header p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Main Telegram Bot Action Button */
+        .bot-banner {
+            margin-top: 20px;
+            background: rgba(34, 158, 217, 0.1);
+            border: 1px solid #229ed9;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .btn-telegram {
+            display: inline-block;
+            background-color: #229ed9;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-telegram:hover {
+            background-color: #1c82b2;
+        }
+
+        /* Trust Badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid #3b82f6;
+            color: #3b82f6;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Grid Layout */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Pricing Card Design */
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .card.popular {
+            border: 2px solid #c50a23;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.15);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #9ca3af;
+        }
+
+        /* Server Specs List */
+        .specs {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .specs li {
+            margin-bottom: 10px;
+            color: #d1d5db;
+            font-size: 0.95rem;
+        }
+
+        .specs li::before {
+            content: "⚡ ";
+            color: #3b82f6;
+        }
+
+        /* Custom Action Buttons */
+        .btn {
+            display: block;
+            background-color: #e75151;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        .btn.popular-btn {
+            background-color: #ef4444;
+        }
+
+        .btn.popular-btn:hover {
+            background-color: #dc2626;
+        }
+
+        /* Footer Info & Bank Ledger Details */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6b7280;
+            font-size: 0.95rem;
+            border-top: 1px solid #1f2937;
+            background-color: #0f172a;
+            border-radius: 12px;
+        }
+
+        .bank-details {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px dashed #10b981;
+            border-radius: 8px;
+            padding: 15px;
+            max-width: 500px;
+            margin: 0 auto 25px;
+            color: #d1d5db;
+            text-align: left;
+        }
+
+        .bank-details strong {
+            color: #10b981;
+        }
+
+        /* Mobile Viewport Optimization Rules */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        
+        <header>
+            <h1>👑 MISTAH GODDY <span>SERVER</span> 👑</h1>
+            <p>Reliable • Fast • Premium Cloud VPS Instances</p>
+            
+            <div class="badges">
+                <span class="badge">Full Root Access</span>
+                <span class="badge">99.9% Cloud Uptime</span>
+                <span class="badge">Fast Delivery</span>
+            </div>
+
+            <!-- New Telegram Checkout Bot Portal -->
+            <div class="bot-banner">
+                <p style="color: #229ed9; font-weight: bold; font-size: 0.95rem;">🤖 Try Our Automated Checkout Bot!</p>
+                <p style="font-size: 0.85rem; color: #9ca3af; margin-top: 2px;">Generate payment invoices and upload receipts automatically via Telegram.</p>
+                <!-- REPLACE 'YOUR_BOT_USERNAME' with your actual bot username below -->
+                <a href="https://t.me/mistahgoddy_bot" class="btn-telegram" target="_blank">Launch Telegram Bot</a>
+            </div>
+        </header>
+
+                <!-- Dynamic Pricing Grid -->
+        <div class="pricing-grid">
+            
+            <!-- Tier 1: Starter -->
+            <div class="card">
+                <div>
+                    <h3>Starter Cloud VPS</h3>
+                    <div class="price">₦9,500<span> / month</span></div>
+                    <ul class="specs">
+                        <li>4 GB Dedicated RAM (Ultra Fast)</li>
+                        <li>2 AMD/Intel vCPU Cores</li>
+                        <li>40 GB NVMe SSD Storage Volume</li>
+                        <li>20 TB High-Speed Bandwidth</li>
+                        <li>Full Root Access Enabled</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/2349022656383" class="btn" target="_blank">Order via WhatsApp</a>
+            </div>
+
+            <!-- Tier 2: Pro (Best Value Option) -->
+            <div class="card popular">
+                <span class="popular-tag">Best Value</span>
+                <div>
+                    <h3>Pro Cloud VPS</h3>
+                    <div class="price">₦16,500<span> / month</span></div>
+                    <ul class="specs">
+                        <li>8 GB High-Performance RAM</li>
+                        <li>4 AMD/Intel vCPU Cores</li>
+                        <li>80 GB NVMe SSD Storage Volume</li>
+                        <li>20 TB High-Speed Bandwidth</li>
+                        <li>Ideal for Heavy Bots & Databases</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/2349022656383" class="btn popular-btn" target="_blank">Order via WhatsApp</a>
+            </div>
+
+        </div>
+
+            <!-- Tier 3: Advanced -->
+            <div class="card">
+                <div>
+                    <h3>Advanced Cloud</h3>
+                    <div class="price">₦26,500<span> / month</span></div>
+                    <ul class="specs">
+                        <li>4 GB High-Performance RAM</li>
+                        <li>2 Virtual CPU Cores</li>
+                        <li>80 GB SSD Storage Volume</li>
+                        <li>4 TB Dedicated Bandwidth</li>
+                        <li>Built for Maximum Traffic Loads</li>
+                    </ul>
+                     <a href="https://wa.me/2349022656383" class="btn popular-btn" target="_blank">Order via WhatsApp</a>
+                </div>
